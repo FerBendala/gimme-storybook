@@ -26,11 +26,10 @@ const config: StorybookConfig = {
         options: {}
     },
     docs: {
-        autodocs: true
+        // autodocs: true
     },
     typescript: {
         check: true,
-
     },
 }
 
