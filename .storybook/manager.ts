@@ -1,7 +1,7 @@
 import { addons } from '@storybook/manager-api'
-import waffle from './waffle'
+import gimmeTheme from './gimme-theme'
 
 addons.setConfig({
-    theme: waffle,
+    theme: gimmeTheme,
     panelPosition: 'bottom',
 })

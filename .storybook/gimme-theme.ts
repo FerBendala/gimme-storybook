@@ -1,18 +1,20 @@
 import { create } from '@storybook/theming/create'
 
 export default create({
+    // Base color
     base: 'dark',
 
     // Typography
     fontBase: 'Nunito Sans, sans-serif',
     fontCode: 'monospace',
 
+    // Brand
     brandTitle: 'My custom Storybook',
     brandUrl: 'https://example.com',
-    brandImage: '/images/shopfully-light.svg',
+    brandImage: '/images/logo-gimme--light.svg',
     brandTarget: '_self',
 
-    //
+    // Primary and secondary
     colorPrimary: '#02131c',
     colorSecondary: '#76b4d5',
 

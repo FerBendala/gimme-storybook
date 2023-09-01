@@ -10,8 +10,7 @@ const config: StorybookConfig = {
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
-        '@storybook/addon-coverage',
-        '@storybook/addon-jest',
+        '@storybook/addon-a11y',
         {
             name: '@storybook/addon-styling',
             options: {
