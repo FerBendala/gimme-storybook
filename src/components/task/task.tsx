@@ -1,0 +1,73 @@
+import React, { FC } from 'react'
+import classNames from 'classnames'
+
+import TaskProps from './types'
+
+import styles from './task.module.scss'
+
+const Task: FC<TaskProps> = ({
+    task: { id, title, state },
+    onArchiveTask,
+    onTogglePinTask,
+    onEditTitle,
+}) => {
+    return (
+        <div
+            className={classNames(
+                styles['list-item'],
+                styles[state]
+            )}
+            role='listitem'
+            aria-label={`task-${id}`}
+        >
+            <label
+                htmlFor='checked'
+                aria-label={`archiveTask-${id}`}
+                className={styles['checkbox']}
+            >
+                <input
+                    type='checkbox'
+                    disabled={true}
+                    name='checked'
+                    id={`archiveTask-${id}`}
+                    checked={state === 'TASK_ARCHIVED'}
+                />
+                <span
+                    className={styles['checkbox-custom']}
+                    onClick={() => onArchiveTask('ARCHIVE_TASK', id)}
+                    role='button'
+                    aria-label={`archiveButton-${id}`}
+                />
+            </label>
+
+            <label
+                htmlFor='title'
+                aria-label={title}
+                className={styles['title']}
+            >
+                <input
+                    type='text'
+                    value={title}
+                    name='title'
+                    placeholder='Input title'
+                    style={{ textOverflow: 'ellipsis' }}
+                    onChange={(e) => onEditTitle(e.target.value, id)}
+                />
+            </label>
+
+            {state !== 'TASK_ARCHIVED' && (
+                <button
+                    className={styles['pin-button']}
+                    onClick={() => onTogglePinTask(state, id)}
+                    id={`pinTask-${id}`}
+                    aria-label={state === 'TASK_PINNED' ? 'unpin' : 'pin'}
+                    key={`pinTask-${id}`}
+                >
+                    <span className={styles['icon-star']} />
+                </button>
+            )}
+        </div>
+    )
+}
+
+export default Task

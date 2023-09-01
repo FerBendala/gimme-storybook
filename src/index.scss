@@ -1,0 +1,85 @@
+@use "./assets/sass/variables.scss" as *;
+@use "./assets/sass/mixins" as m;
+@use "./assets/sass/functions" as f;
+@import "./assets/sass/reset.scss";
+@import "./assets/sass/fonts.scss";
+
+html {
+    scroll-behavior: smooth;
+    body {
+        margin: 0;
+
+        font-family: $font-family;
+
+        background-color: $color-blue;
+        line-height: 1.4;
+
+        // Basics
+        * {
+            box-sizing: border-box;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-tap-highlight-color: transparent;
+
+            // Focus
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        cursor: pointer;
+        appearance: button;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea {
+        font-size: 14px;
+        line-height: 20px;
+        font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: 400;
+        padding: 0.75rem 0;
+        line-height: 1.5rem !important;
+        border: none;
+        border-radius: 0;
+        box-sizing: border-box;
+        color: #333;
+        outline: none;
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+        font-family: "percolate";
+
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+    }
+
+    .icon-star:before {
+        content: "\e608";
+    }
+
+    .icon-face-sad:before {
+        content: "\e60f";
+    }
+
+    .icon-check:before {
+        content: "\e65e";
+    }
+}

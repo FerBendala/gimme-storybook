@@ -1,0 +1,13 @@
+# dependencies
+/node_modules
+package-lock.json
+yarn.lock
+
+# production and tests
+/build
+/lib
+/coverage
+.jest-test-results.json
+
+# Misc
+.DS_Store

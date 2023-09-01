@@ -1,0 +1,8 @@
+# No ignore
+!.storybook
+
+# Ignore
+lib
+rollup.config.*
+*.md
+*.mdx
