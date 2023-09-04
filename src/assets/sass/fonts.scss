@@ -1,11 +1,6 @@
 @use "mixins" as m;
 
-@font-face {
-    font-family: "percolate";
-    src: url("../fonts/icon/percolate.eot");
-    src: url("../fonts/icon/percolate.eot") format("embedded-opentype"),
-        url("../fonts/icon/percolate.woff") format("woff"), url("../fonts/icon/percolate.ttf") format("truetype"),
-        url("../fonts/icon/percolate.svg") format("svg");
-    font-weight: normal;
-    font-style: normal;
-}
+@include m.font-face("Rambla", "../fonts/rambla/rambla-bold", bold, normal, woff2 woff);
+@include m.font-face("Rambla", "../fonts/rambla/rambla-bold-italic", bold, italic, woff2 woff);
+@include m.font-face("Rambla", "../fonts/rambla/rambla-regular", normal, normal, woff2 woff);
+@include m.font-face("Rambla", "../fonts/rambla/rambla-italic", normal, italic, woff2 woff);

@@ -1,30 +1,66 @@
-// =============================================================================
-// Color
-// =============================================================================
-$color-black: #1a1a1a;
-$color-gray: #eef1f4;
-$color-gray--light: #bac0ca;
-$color-gray--dark: #667080;
-$color-white: #fff;
-$color-blue: #63acb0;
+// Spacings
+$spacing-spacing-9xl: 96;
+$spacing-spacing-8xl: 80;
+$spacing-spacing-7xl: 64;
+$spacing-spacing-6xl: 56;
+$spacing-spacing-5xl: 48;
+$spacing-spacing-4xl: 40;
+$spacing-spacing-3xl: 32;
+$spacing-spacing-2xl: 24;
+$spacing-spacing-xl: 20;
+$spacing-spacing-lg: 16;
+$spacing-spacing-md: 12;
+$spacing-spacing-sm: 8;
+$spacing-spacing-xs: 4;
+$spacing-spacing-2xs: 2;
 
-$color-primary: $color-blue;
-$color-secondary: $color-gray--dark;
+// Border radius
+$borderradius-rounded-full: 100;
+$borderradius-rounded-xl: 16;
+$borderradius-rounded-lg: 12;
+$borderradius-rounded-md: 8;
+$borderradius-rounded-sm: 4;
 
-// =============================================================================
+// Font size
+$fontsize-xl: 28;
+$fontsize-lg: 22;
+$fontsize-md: 14;
+$fontsize-sm: 12;
+$fontsize-base: 16;
+
+// Colors
+$color-white: #FFFFFF;
+
+$color-gray-100: #E4E4EB;
+$color-gray-200: #C9C9D5;
+$color-gray-300: #AEAEC0;
+$color-gray-base: #777794;
+
+$color-black: #282832;
+
+$color-danger-100: #F6D6D5;
+$color-danger-300: #E48381;
+$color-danger-200: #EDACAB;
+$color-danger-base: #D2312E;
+
+$color-secondary-100: #EEE8F2;
+$color-secondary-200: #DFD3E6;
+$color-secondary-300: #CFBCDA;
+$color-secondary-base: #B090C1;
+
+$color-primary-100: #DEF3F3;
+$color-primary-200: #BDE7E7;
+$color-primary-300: #9BDBDC;
+$color-primary-base: #59C3C4;
+
 // Text
-// =============================================================================
-$font-family: "Nunito", sans-serif;
+$font-family: "Rambla", sans-serif;
 
-// =============================================================================
 // Display & Box Model
-// =============================================================================
 $box-shadow: 0px 4px 4px rgba($color-black, 0.04), 0px 8px 64px rgba($color-black, 0.12);
 $box-shadow--dark: 0px 2px 2px rgba($color-black, 0.04), 0px 4px 8px rgba($color-black, 0.12);
 
-// =============================================================================
 // Other
-// =============================================================================
 $transition: 0.4s ease-out;
 $transition--menu: 0.5s ease;
 $path-image: "../images";

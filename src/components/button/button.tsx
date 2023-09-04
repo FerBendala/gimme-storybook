@@ -6,25 +6,35 @@ import ButtonProps from './types'
 import styles from './button.module.scss'
 
 const Button: FC<ButtonProps> = ({
-    type = 'primary',
-    textColor,
-    size = 'medium',
+    type,
+    size,
+    style,
+    text,
+    avatar,
+    hasIcon,
     onClick,
-    label,
 }) => {
     return (
         <button
-            type='button'
+            type={type}
             role='button'
+            onClick={onClick}
             className={classNames(
                 styles['storybook-button'],
                 styles[`storybook-button--${size}`],
-                styles[`storybook-button--${type}`]
+                styles[`storybook-button--${style}`],
+                hasIcon && styles[`storybook-button--${hasIcon}`],
             )}
-            style={textColor ? { color: textColor } : {}}
-            onClick={onClick}
         >
-            {label}
+            {hasIcon && <p>icon</p> /* <Icon className={styles['button__icon']} /> */}
+            {avatar && (
+                <img
+                    className={styles['button__image']}
+                    src={avatar}
+                    alt={text}
+                />
+            )}
+            {text && <span className={styles['button__text']}>{text}</span>}
         </button>
     )
 }

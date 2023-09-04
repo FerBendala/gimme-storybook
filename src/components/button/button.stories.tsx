@@ -9,24 +9,35 @@ import Button from './button'
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
     component: Button,
+    parameters:{
+        controls:{
+            exclude:/style|hasIcon|onClick*/g
+        }
+    },
     argTypes: {
-        label: {
-            description: 'Overwritten label',
-        },
         type: {
-            control: 'radio',
-            description: 'Select the type (primary or secondary)',
-            options: ['primary', 'secondary'],
-        },
-        textColor: {
-            control: 'color',
-            description: 'Change color of the button',
-            defaultValue: 'color'
+            control: 'select',
+            description: 'Select the size (small, medium or large)',
+            options: ['button', 'submit']
         },
         size: {
             control: 'select',
             description: 'Select the size (small, medium or large)',
             options: ['small', 'medium', 'large']
+        },
+        style: {
+            control: 'select',
+            description: 'Select the type (primary or secondary)',
+            options: ['primary', 'secondary', 'tertiary'],
+        },
+        text: {
+            description: 'Overwritten label',
+        },
+        avatar: {
+            description: 'Overwritten avatar url image',
+        },
+        hasIcon: {
+            control: 'boolean'
         },
         onClick: {
             description: 'add any function'
@@ -39,16 +50,19 @@ export default meta
 type Story = StoryObj<typeof Button>;
 export const Primary: Story = {
     args: {
-        label: 'Primary',
-        size: 'large',
-        type: 'primary',
+        type: 'button',
+        size: 'medium',
+        style: 'primary',
+        text: 'Button',
+        avatar: '',
+        hasIcon: false
     },
     play: async ({ canvasElement }) => {
         const canvas = within(canvasElement)
-        const primaryButton = canvas.getByRole('button', { name: /Primary/i })
+        const primaryButton = canvas.getByRole('button', { name: /Button/i })
 
 
-        await expect(primaryButton.innerText).toBe('Primary')
+        await expect(primaryButton.innerText).toBe('Button')
         await expect(primaryButton).toHaveStyle('background-color: #1ea7fd')
     }
 }
@@ -56,17 +70,21 @@ export const Primary: Story = {
 export const Secondary: Story = {
     args: {
         ...Primary.args,
-        type: 'secondary',
-        label: 'Secondary',
-    },
-    play: async ({ canvasElement }) => {
-        const canvas = within(canvasElement)
-        const secondaryButton = canvas.getByRole('button', { name: /Secondary/i })
+        style: 'secondary',
+    }
+}
 
+export const Tertiary: Story = {
+    args: {
+        ...Primary.args,
+        style: 'tertiary',
+    }
+}
 
-        await expect(secondaryButton.innerText).toBe('Secondary')
-        await expect(secondaryButton).toHaveStyle('background-color: #fff')
-        await expect(secondaryButton).toHaveStyle('box-shadow: #00000026 0 0 0 1px inset')
+export const Danger: Story = {
+    args: {
+        ...Primary.args,
+        style: 'danger',
     }
 }
 
